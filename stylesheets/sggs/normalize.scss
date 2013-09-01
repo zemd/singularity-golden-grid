@@ -1,0 +1,7 @@
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+html {
+  font-size: $base-font-size / 16 * 1em;
+  line-height: #{$base-line-height / $base-font-size}em;
+}

@@ -1,0 +1,152 @@
+%grid-container {
+  margin: 0 $grid-column-size;
+}
+
+// Mixins
+@mixin grid-container {
+  @extend %grid-container;
+}
+
+@mixin grid-column($n: 1) {
+  @include float-span($n);
+}
+
+// Grids
+
+/**
+ *
+ *  Four-column grid active
+ *  ----------------------------------------
+ *  Margin   | #  1   2   3   4   |   Margin
+ *  5.55555% | %  25  50  75  100 | 5.55555%
+ *
+ */
+$grids: 4;
+$gutters: $grid-gutters-width;
+$gutter-styles: split;
+
+@include breakpoint(640px) {
+  html {
+    // Zoom baseline grid to 17/16 = 1.0625
+    font-size: (($base-font-size + 1) / $base-font-size) * 1em;
+  }
+}
+
+/*
+*
+*  Eight-column grid active
+*  ----------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+*
+*
+*/
+$grids: add-grid(8 at 720px);
+
+@include breakpoint(720px) {
+  html {
+    // Reset baseline grid to 16/16 = 1
+    font-size: 1em;
+  }
+}
+
+@include breakpoint(888px) {
+  html {
+    // Zoom baseline grid to 17/16 = 1.0625
+    font-size: (($base-font-size + 1) / $base-font-size) * 1em;
+  }
+}
+
+@include breakpoint(984px) {
+  html {
+    // Reset baseline grid to 16/16 = 1.0
+    font-size: 1em;
+  }
+
+  //%grid-container {
+  //  margin: 0 $grid-column-size * 3;
+  //}
+}
+
+@include breakpoint(1200px) {
+  html {
+    // Zoom baseline grid to 17/16 = 1.0625
+    font-size: (($base-font-size + 1) / $base-font-size) * 1em;
+  }
+}
+
+
+@include breakpoint(1392px) {
+  html {
+    // Reset baseline grid to 16/16 = 1.0
+    font-size: 1em;
+  }
+
+  .container {
+    margin: 0 $grid-column-size * 3;
+  }
+}
+
+@include breakpoint(1680px) {
+  html {
+    // Zoom baseline grid to 17/16 = 1.0625
+    font-size: (($base-font-size + 1) / $base-font-size) * 1em;
+  }
+}
+
+/*
+*
+*  Sixteen-column grid active
+*  ----------------------------------------------------------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
+*  5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
+*
+*
+*/
+$grids: add-grid(16 at 1872px);
+@include breakpoint(1872px) {
+  %grid-container {
+    margin: 0 $grid-column-size * 3;
+  }
+}
+
+@include breakpoint(2080px) {
+  html {
+    // Zoom baseline grid to 18/16 = 1.125
+    font-size: (($base-font-size + 2) / $base-font-size) * 1em;
+    max-width: (2560/$base-font-size) * 1em;
+  }
+  %grid-container {
+    margin: 0 $grid-column-size * 4;
+  }
+}
+
+@include breakpoint(2496px) {
+  // Zoom baseline grid to 18/16 = 1.125
+  html {
+    font-size: (($base-font-size + 2) / $base-font-size) * 1em;
+  }
+}
+
+@include breakpoint(3216px) {
+  %grid-container {
+    margin: 0 $grid-column-size * 5;
+  }
+}
+
+@include breakpoint(4104px) {
+  html {
+    // Zoom baseline grid to 19/16 = 1.1875
+    font-size: (($base-font-size + 3) / $base-font-size) * 1em;
+  }
+}
+
+@include breakpoint(4440px) {
+  html {
+    max-width: 5120px;
+  }
+  %grid-container {
+    margin: 0 $grid-column-size * 7;
+  }
+}
+
