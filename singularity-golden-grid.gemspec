@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Singularity golden grid system implementation}
   s.authors = ["Dmitry Zelenetskiy"]
   s.email = ["dmitry.zelenetskiy@gmail.com"]
-  s.homepage = "https://githib.com/hunterman/singularity-golden-grid"
+  s.homepage = "https://github.com/hunterman/singularity-golden-grid"
   s.licenses = ["Apache2"]
 
   # Library Files
